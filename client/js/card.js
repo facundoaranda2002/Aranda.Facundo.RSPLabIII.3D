@@ -1,3 +1,4 @@
+/*
 const crearCard = (data)=>
 {
     if(!Array.isArray(data)) return null;
@@ -28,6 +29,7 @@ const crearCard = (data)=>
     });
     return fragmento;
 }
+*/
 
 const crearCardBoostrap = (data)=>
 {
