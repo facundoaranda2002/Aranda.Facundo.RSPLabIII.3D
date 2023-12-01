@@ -3,10 +3,10 @@
     {
       "id": 4,
       "nombre": "Marcos",
-      "tipo": "Zombie",
-      "alias": "loco",
-      "miedo": 10,
-      "defensa": "Plata"
+      "tipo": "Vampiro",
+      "alias": "lolo",
+      "miedo": 7,
+      "defensa": "Estaca"
     },
     {
       "id": 5,
@@ -57,14 +57,6 @@
       "defensa": "Plata"
     },
     {
-      "id": 12,
-      "nombre": "Roger",
-      "tipo": "Esqueleto",
-      "alias": "aguas",
-      "miedo": 1,
-      "defensa": "Pocion"
-    },
-    {
       "id": 13,
       "nombre": "Blondie",
       "tipo": "Vampiro",
@@ -105,12 +97,60 @@
       "defensa": "Crucifijo"
     },
     {
-      "nombre": "asdad",
+      "nombre": "Lucas",
       "tipo": "Fantasma",
-      "alias": "asdasd",
-      "miedo": 3,
-      "defensa": "Crucifijo",
+      "alias": "pichichi",
+      "miedo": 9,
+      "defensa": "Plata",
       "id": 19
+    },
+    {
+      "nombre": "Tomas",
+      "tipo": "Fantasma",
+      "alias": "kim",
+      "miedo": 5,
+      "defensa": "Crucifijo",
+      "id": 20
+    },
+    {
+      "nombre": "Carlos",
+      "tipo": "Hombre lobo",
+      "alias": "rr",
+      "miedo": 8,
+      "defensa": "Plata",
+      "id": 21
+    },
+    {
+      "nombre": "lolo",
+      "tipo": "Zombie",
+      "alias": "lo",
+      "miedo": 4,
+      "defensa": "Crucifijo",
+      "id": 22
+    },
+    {
+      "nombre": "lalo",
+      "tipo": "Vampiro",
+      "alias": "lel",
+      "miedo": 6,
+      "defensa": "Estaca",
+      "id": 23
+    },
+    {
+      "nombre": "asasas",
+      "tipo": "Fantasma",
+      "alias": "asas",
+      "miedo": 3,
+      "defensa": "Pocion",
+      "id": 24
+    },
+    {
+      "nombre": "lol",
+      "tipo": "Zombie",
+      "alias": "l",
+      "miedo": 9,
+      "defensa": "Estaca",
+      "id": 25
     }
   ]
 }

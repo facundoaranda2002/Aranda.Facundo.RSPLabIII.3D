@@ -23,6 +23,8 @@ const $cbTablaDefensa = document.getElementById("cbTablaDefensa");
 const $cbTablaMiedo = document.getElementById("cbTablaMiedo");
 const $cbTablaTipo = document.getElementById("cbTablaTipo");
 
+let Filtrado = "Todos";
+
 const URL = "http://localhost:3000/monstruos";
 
 const tiposL = ["Esqueleto", "Zombie", "Vampiro", "Fantasma", "Bruja", "Hombre lobo"];
@@ -30,7 +32,7 @@ actualizarStorage("tipos",tiposL);
 actualizarChecked();
 
 //actualizarTablaJsonServer($seccionTabla, URL, $imgLoader);
-actualizarTablaFiltrado($seccionTabla, URL, $imgLoader);
+actualizarTablaFiltrado($seccionTabla, URL, $imgLoader, Filtrado);
 const tipos = JSON.parse(localStorage.getItem("tipos")) || [];
 if(tipos.length)
 {
@@ -38,30 +40,41 @@ if(tipos.length)
 }
 
 $cbTablaNombre.addEventListener("change", function(e){
-    actualizarTablaFiltrado($seccionTabla, URL, $imgLoader);
+    actualizarTablaFiltrado($seccionTabla, URL, $imgLoader, Filtrado);
     guardarCheckedStorage();
 });
 $cbTablaAlias.addEventListener("change", function(e){
-    actualizarTablaFiltrado($seccionTabla, URL, $imgLoader);
+    actualizarTablaFiltrado($seccionTabla, URL, $imgLoader, Filtrado);
     guardarCheckedStorage();
 });
 $cbTablaDefensa.addEventListener("change", function(e){
-    actualizarTablaFiltrado($seccionTabla, URL, $imgLoader);
+    actualizarTablaFiltrado($seccionTabla, URL, $imgLoader, Filtrado);
     guardarCheckedStorage();
 });
 $cbTablaMiedo.addEventListener("change", function(e){
-    actualizarTablaFiltrado($seccionTabla, URL, $imgLoader);
+    actualizarTablaFiltrado($seccionTabla, URL, $imgLoader, Filtrado);
     guardarCheckedStorage();
 });
 $cbTablaTipo.addEventListener("change", function(e){
-    actualizarTablaFiltrado($seccionTabla, URL, $imgLoader);
+    actualizarTablaFiltrado($seccionTabla, URL, $imgLoader, Filtrado);
     guardarCheckedStorage();
 });
 
 $slcTipoFilter.addEventListener("change", function(){
+    console.log("hola");
     let tipoMonstruo = this.options[this.selectedIndex];
     console.log("Option selected: " + tipoMonstruo.value);
-    actualizarTablaFiltrado($seccionTabla, URL, $imgLoader)
+    actualizarTablaFiltrado($seccionTabla, URL, $imgLoader, Filtrado);
+});
+
+const dropdownItems = document.querySelectorAll('.dropdown-item');
+dropdownItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+        let selectedValue = item.getAttribute('data-value');
+        console.log('Seleccionado:', selectedValue);
+        Filtrado = selectedValue;
+        actualizarTablaFiltrado($seccionTabla, URL, $imgLoader, Filtrado);
+    });
 });
 
 window.addEventListener("click",(e)=>{
@@ -229,7 +242,7 @@ function crearSelect($divContainer,data)
     $divContainer.appendChild(fragmento);
 }
 
-async function actualizarTablaFiltrado(divContainer,url,loader)
+async function actualizarTablaFiltrado(divContainer,url,loader,Filtrado)
 {
     try
     {
@@ -238,7 +251,7 @@ async function actualizarTablaFiltrado(divContainer,url,loader)
         }
 
         const arrayMonstruos = await getMonstruos(url,loader);
-        if($slcTipoFilter.value == "Todos")
+        if(Filtrado == "Todos")
         {
             obtenerPromedioMiedo($promedioMiedo,arrayMonstruos);
             obtenerMiedoMaximo($maximoMiedo, arrayMonstruos);
@@ -253,7 +266,7 @@ async function actualizarTablaFiltrado(divContainer,url,loader)
         else
         {
             const arrayFiltrado = arrayMonstruos.filter(function(element) {
-                return element.tipo == $slcTipoFilter.value;
+                return element.tipo == Filtrado;
             });
             obtenerPromedioMiedo($promedioMiedo,arrayFiltrado);
             obtenerMiedoMaximo($maximoMiedo, arrayFiltrado);
@@ -381,5 +394,6 @@ function actualizarChecked()
     }
     
 }
+
 
 

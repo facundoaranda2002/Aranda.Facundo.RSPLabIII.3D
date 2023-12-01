@@ -88,6 +88,7 @@
             </div>
           </div>
           <div class="row">
+            <!--
             <div class="text-center col">
               <select name="slcTipoFilter" id="slcTipoFilter" class="controles margin form-select bg-warning text-black">
                 <option class="text-black" value="Todos">Todos</option>
@@ -98,6 +99,37 @@
                 <option class="text-black" value="Bruja">Bruja</option>
                 <option class="text-black" value="Hombre lobo">Hombre lobo</option>                
               </select>
+            </div>
+            -->
+            <!--
+            <div class="dropdown">
+              <button name="slcTipoFilter" id="slcTipoFilter" class="controles margin btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Filtrar
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" value="Todos">Todos</a></li>
+                <li><a class="dropdown-item" value="Esqueleto">Esqueleto</a></li>
+                <li><a class="dropdown-item" value="Zombie">Zombie</a></li>
+                <li><a class="dropdown-item" value="Vampiro">Vampiro</a></li>
+                <li><a class="dropdown-item" value="Fantasma">Fantasma</a></li>
+                <li><a class="dropdown-item" value="Bruja">Bruja</a></li>
+                <li><a class="dropdown-item" value="Hombre lobo">Hombre lobo</a></li>
+              </ul>
+            </div>
+            -->
+            <div class="text-center col dropdown">
+              <button class="btn btn-warning dropdown-toggle" type="button" id="slcTipoFilter" data-bs-toggle="dropdown" aria-expanded="false">
+                Filtrar por Tipo
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="slcTipoFilter">
+                <li><a class="dropdown-item" data-value="Todos">Todos</a></li>
+                <li><a class="dropdown-item" data-value="Esqueleto">Esqueleto</a></li>
+                <li><a class="dropdown-item" data-value="Zombie">Zombie</a></li>
+                <li><a class="dropdown-item" data-value="Vampiro">Vampiro</a></li>
+                <li><a class="dropdown-item" data-value="Fantasma">Fantasma</a></li>
+                <li><a class="dropdown-item" data-value="Bruja">Bruja</a></li>
+                <li><a class="dropdown-item" data-value="Hombre lobo">Hombre lobo</a></li>
+              </ul>
             </div>
             <div class="text-center col row">
               <div class="text-center col">
